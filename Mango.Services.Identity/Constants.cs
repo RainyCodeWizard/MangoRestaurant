@@ -1,5 +1,6 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
+using System.Collections.Generic;
 
 namespace Mango.Services.Identity
 {
@@ -23,7 +24,7 @@ namespace Mango.Services.Identity
                 new ApiScope(name: "write", displayName: "Write Scope"),
                 new ApiScope(name: "delete", displayName: "Delete Scope"),
             };
-        public static IEnumerable<object> Clients =>
+        public static IEnumerable<Client> Clients =>
             new List<Client>
             {
                 new Client
