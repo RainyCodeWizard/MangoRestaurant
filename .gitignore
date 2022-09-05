@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Mango.Services.Identity/tempkey.jwk
+/Mango.Services.Identity/keys/is-signing-key-36686BAC12446B2485BF8326DEB2A866.json

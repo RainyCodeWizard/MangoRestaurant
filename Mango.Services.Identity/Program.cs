@@ -1,5 +1,6 @@
 using Mango.Services.Identity;
 using Mango.Services.Identity.DbContext;
+using Mango.Services.Identity.Initializer;
 using Mango.Services.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
@@ -33,6 +34,8 @@ builder.Services.AddIdentityServer(options =>
 .AddAspNetIdentity<ApplicationUser>()
 .AddDeveloperSigningCredential();  //This is for dev only scenarios when you don’t have a certificate to use.
 
+builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -51,6 +54,9 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseIdentityServer();
 app.UseAuthorization();
+
+IServiceScope scope = app.Services.CreateScope();
+scope.ServiceProvider.GetRequiredService<IDbInitializer>().Initialize();
 
 app.MapControllerRoute(
     name: "default",
