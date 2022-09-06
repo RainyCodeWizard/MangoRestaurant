@@ -20,7 +20,8 @@ conStrBuilder.Password = builder.Configuration["password"];
 //-----------------------------------------------------------
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conStrBuilder.ConnectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conStrBuilder.ConnectionString, 
+    options => options.EnableRetryOnFailure()));
 
 IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
 builder.Services.AddSingleton(mapper);

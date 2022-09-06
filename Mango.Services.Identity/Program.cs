@@ -19,7 +19,8 @@ conStrBuilder.Password = builder.Configuration["password"];
 //-----------------------------------------------------------
 
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conStrBuilder.ConnectionString));
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(conStrBuilder.ConnectionString, 
+    options => options.EnableRetryOnFailure()));
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>() // IdentityRole is default
     .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.AddIdentityServer(options =>
