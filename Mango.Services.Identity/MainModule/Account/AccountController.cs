@@ -306,14 +306,10 @@ namespace IdentityServerHost.Quickstart.UI
                 }
                 else
                 {
-                    List<string> passwordErrors = new();
                     foreach (IdentityError error in result.Errors)
                     {
-                        passwordErrors.Add(error.Description);
-                    }
-
-                    ViewBag.passwordErrors = passwordErrors;
-                    
+                        ModelState.AddModelError(error.Code, error.Description);
+                    }                    
                 }
             }
 
