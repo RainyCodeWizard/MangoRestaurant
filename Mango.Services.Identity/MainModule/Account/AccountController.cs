@@ -304,10 +304,23 @@ namespace IdentityServerHost.Quickstart.UI
                     }
 
                 }
+                else
+                {
+                    List<string> passwordErrors = new();
+                    foreach (IdentityError error in result.Errors)
+                    {
+                        passwordErrors.Add(error.Description);
+                    }
+
+                    ViewBag.passwordErrors = passwordErrors;
+                    
+                }
             }
 
             // If we got this far, something failed, redisplay form
-            return View(model);
+            var vm = await BuildRegisterViewModelAsync(returnUrl);
+            return View(vm);
+            //return View(model);
         }
         private async Task<RegisterViewModel> BuildRegisterViewModelAsync(string returnUrl)
         {
