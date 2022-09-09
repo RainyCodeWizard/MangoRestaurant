@@ -92,7 +92,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
+app.UseAuthentication(); // Authentication always before authorization.
 app.UseAuthorization();
 
 app.MapControllers();
