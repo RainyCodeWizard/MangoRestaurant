@@ -4,6 +4,6 @@ To learn about C# .NET 6 and microservices architecture. Followed a guide from [
 ## Project Description
 Built a simple web page for a restaurant for displaying its products.
 ## Learning Points
-- Front-End Development using ASP MVC + Bootstrap
+- Front-End Development using ASP .NET MVC + Bootstrap
 - Back-End CRUD API
 - Authenticate users using Duende Identity Server
