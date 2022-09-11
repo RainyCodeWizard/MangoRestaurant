@@ -7,3 +7,4 @@ Built a simple web page for a restaurant for displaying its products.
 - Front-End Development using ASP .NET MVC + Bootstrap
 - Back-End CRUD API
 - Authenticate users using Duende Identity Server
+- Experienced using Azure hosted database and storage blob
