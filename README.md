@@ -6,5 +6,5 @@ Built a simple web page for a restaurant for displaying its products.
 ## Learning Points
 - Front-End Development using ASP .NET MVC + Bootstrap
 - Back-End CRUD API
-- Authenticate users using Duende Identity Server
+- Authenticate users using Duende Identity Server with OpenID Connect
 - Experienced using Azure hosted database and storage blob
